@@ -1,5 +1,10 @@
 {
     "cmi-ta adapter settings": "cmi-ta的适配器设置",
     "option1": "option1",
-    "option2": "option2"
+    "option2": "option2",
+    "Please enter the IP address of your CMI device": "请输入您的CMI设备的IP地址",
+    "IP of the CMI": "CMI的IP",
+    "Number of the device in the CAN-Bus": "CAN 总线中的设备编号",
+    "CAN-Bus ID": "CAN总线ID",
+    "Port for the connection (normaly 80)": "连接端口（通常为 80）"
 }

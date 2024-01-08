@@ -33,14 +33,29 @@ class CmiTa extends utils.Adapter {
      */
     async onReady() {
         // Initialize your adapter here
+        if (!this.config.IP) {
+            this.log.error(`Server IP is empty - please check instance configuration of ${this.namespace}`);
+            return;
+        }
 
+        if (!this.config.userName || !this.config.userPassword) {
+            this.log.error(`User name and/or user password empty - please check instance configuration of ${this.namespace}`);
+            return;
+        }
+
+        if (!this.config.Port) {
+            this.log.error(`Web instance is not configured - please check instance configuration of ${this.namespace}`);
+            return;
+        }
+        //this.log.error("Current Settings are" ${this.config.ip}:${this.config.Port});
         // Reset the connection indicator during startup
         this.setState('info.connection', false, true);
 
         // The adapters config (in the instance object everything under the attribute "native") is accessible via
         // this.config:
-        this.log.info('config option1: ' + this.config.option1);
-        this.log.info('config option2: ' + this.config.option2);
+        this.log.debug('Current settings are:' + this.config.IP + ':' + this.config.Port );
+        this.log.info('config ServerIP: ' + this.config.IP);
+        this.log.info('config Server Port: ' + this.config.Port);
 
         /*
         For every state in the system there has to be also an object of type state
@@ -60,7 +75,7 @@ class CmiTa extends utils.Adapter {
         });
 
         // In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-        this.subscribeStates('testVariable');
+        //this.subscribeStates('testVariable');
         // You can also add a subscription for multiple states. The following line watches all states starting with "lights."
         // this.subscribeStates('lights.*');
         // Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
@@ -138,6 +153,11 @@ class CmiTa extends utils.Adapter {
         }
     }
 
+
+    async setApiConnection(status) {
+        this.apiConnected = status;
+        await this.setStateChangedAsync('info.connection', { val: status, ack: true });
+    }
     // If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
     // /**
     //  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...

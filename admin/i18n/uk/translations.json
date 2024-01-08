@@ -1,0 +1,10 @@
+{
+    "cmi-ta adapter settings": "Налаштування адаптера для cmi-ta",
+    "Please enter the IP address of your CMI device": "Будь ласка, введіть IP-адресу вашого пристрою CMI",
+    "IP of the CMI": "ІП ММК",
+    "Number of the device in the CAN-Bus": "Номер пристрою в CAN-шині",
+    "CAN-Bus ID": "Ідентифікатор CAN-шини",
+    "option1": "варіант1",
+    "option2": "варіант2",
+    "Port for the connection (normaly 80)": "Порт для підключення (зазвичай 80)"
+}

@@ -1,5 +1,10 @@
 {
     "cmi-ta adapter settings": "Adapterinstellingen voor cmi-ta",
     "option1": "option1",
-    "option2": "option2"
+    "option2": "option2",
+    "Please enter the IP address of your CMI device": "Voer het IP-adres van uw CMI-apparaat in",
+    "IP of the CMI": "IP van de CMI",
+    "Number of the device in the CAN-Bus": "Nummer van het apparaat in de CAN-Bus",
+    "CAN-Bus ID": "CAN-Bus-ID",
+    "Port for the connection (normaly 80)": "Poort voor de verbinding (normaal 80)"
 }

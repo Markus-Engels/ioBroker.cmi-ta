@@ -2,15 +2,52 @@
     "i18n": true,
     "type": "panel",
     "items": {
-        "option1": {
-            "type": "checkbox",
-            "label": "option1",
-            "newLine": true
-        },
-        "option2": {
+        "IP": {
             "type": "text",
-            "label": "option2",
-            "newLine": true
+            "label": "IP of the CMI",
+            "newLine": false,
+            "help": "Please enter the IP address of your CMI device"
+        },
+        "Port": {
+            "type": "number",
+            "label": "Port for the connection",
+            "newLine": true,
+            "min": 1,
+            "max": 65535,
+            "help": "Please enter the port of your CMI device"
+        },
+        "UserName": {
+            "type": "number",
+            "label": "Username on the CMI",
+            "newLine": true,
+            "min": 1,
+            "max": 65535,
+            "help": "User for the Webaccess"
+        },
+        "Password": {
+            "type": "number",
+            "label": "Password for the CMI User",
+            "newLine": true,
+            "min": 1,
+            "max": 65535,
+            "help": "Password for the CMI User"
+        },
+        "CAN-Bus ID": {
+            "type": "number",
+            "label": "Number of the device in the CAN-Bus",
+            "newLine": true,
+            "min": 1,
+            "max": 99,
+            "help": "Please enter the CAN-Bus number of your CMI device"
+        },
+        "_Banner":{
+            "newLine":true,
+            "type": "staticImage",
+            "sm": 6,
+            "md": 6,
+            "lg": 12,
+            "href": "",
+            "src": ""
         }
     }
 }
