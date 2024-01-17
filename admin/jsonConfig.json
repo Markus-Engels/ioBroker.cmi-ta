@@ -1,0 +1,53 @@
+{
+	"i18n": true,
+	"type": "panel",
+	"items": {
+		"IP": {
+			"type": "text",
+			"label": "IP of the CMI",
+			"newLine": false,
+			"help": "Please enter the IP address of your CMI device"
+		},
+		"Port": {
+			"type": "number",
+			"label": "Port for the connection",
+			"newLine": true,
+			"min": 1,
+			"max": 65535,
+			"help": "Please enter the port of your CMI device"
+		},
+		"UserName": {
+			"type": "text",
+			"label": "Username on the CMI",
+			"newLine": true,
+			"help": "User for the Webaccess"
+		},
+		"Password": {
+			"type": "text",
+			"label": "Password for the CMI User",
+			"newLine": true,
+			"help": "Password for the CMI User"
+		},
+		"CanBusId": {
+			"type": "number",
+			"label": "Device  in CAN- Bus",
+			"newLine": true,
+			"help": "Device  in CAN- Bus"
+		},
+		"Option1": {
+			"type": "text",
+			"label": "Commata seperated list of the needed values. I=Input, O= Output, D=DL-Bus",
+			"newLine": true,
+			"help": "Please enter a Commata seperated list of the needed values. I=Input, O= Output, D=DL-Bus"
+		},
+		"_Banner":{
+			"newLine":true,
+			"type": "staticImage",
+			"sm": 6,
+			"md": 6,
+			"lg": 12,
+			"href": "",
+			"src": ""
+		}
+	}
+}

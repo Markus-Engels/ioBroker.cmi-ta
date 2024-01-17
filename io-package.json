@@ -1,0 +1,106 @@
+{
+	"common": {
+		"name": "cmi-ta",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"uk": "Початкова версія",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "TA-CMI",
+		"titleLang": {
+			"en": "TA-CMI",
+			"de": "TA-CMI",
+			"ru": "ТА-КМИ",
+			"pt": "TA-CMI",
+			"nl": "TA-CMI",
+			"fr": "TA-CMI",
+			"it": "TA-CMI",
+			"es": "TA-CMI",
+			"pl": "TA-CMI",
+			"uk": "TA-CMI",
+			"zh-cn": "TA-CMI"
+		},
+		"desc": {
+			"en": "read data from the CMI",
+			"de": "Daten vom CMI lesen",
+			"ru": "прочитать данные из CMI",
+			"pt": "ler dados do CMI",
+			"nl": "gegevens uit de CMI lezen",
+			"fr": "lire les données du CMI",
+			"it": "leggere i dati dal CMI",
+			"es": "leer datos del CMI",
+			"pl": "odczytać dane z CMI",
+			"uk": "читати дані з CMI",
+			"zh-cn": "从CMI读取数据"
+		},
+		"authors": [
+			"Markus-Engels <markus.engels@gmx.de>"
+		],
+		"keywords": [
+			"cmi",
+			"uvr",
+			"ta",
+			"heating"
+		],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "cmi-ta.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/Markus-Engels/ioBroker.cmi-ta/main/admin/cmi-ta.png",
+		"readme": "https://github.com/Markus-Engels/ioBroker.cmi-ta/blob/main/README.md",
+		"loglevel": "info",
+		"tier": 3,
+		"mode": "daemon",
+		"type": "climate-control",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "json"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=3.3.22"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=5.1.13"
+			}
+		]
+	},
+	"protectedNative": [
+		"UserName",
+		"Password"
+	  ],
+	  "encryptedNative": [
+		"Password"
+	  ],
+	"native": {
+		"IP": "CMI",
+		"Port": "80",
+		"CanBusId":"",
+		"UserName": "admin",
+		"Password":"",
+		"Option1": "I,O,D",
+		"Option2":"2",
+		"Timestamp":"",
+		"Status":"",
+		"state":"",
+		"ras":""
+	},
+	"objects": [],
+	"instanceObjects": []
+}
