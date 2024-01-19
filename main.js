@@ -114,7 +114,7 @@ class CmiTa extends utils.Adapter {
 			type: 'state',
 			common: {
 				name: 'Timestamp',
-				type: 'number',
+				type: 'string',
 				role: 'value',
 				read: true,
 				write: false,
@@ -162,28 +162,17 @@ class CmiTa extends utils.Adapter {
 		await this.setStateChangedAsync('DeviceInfo.Version', { val: jsonString.Header.Version, ack: true });
 		this.log.debug('Device :   ' + deviceName);
 		await this.setStateChangedAsync('DeviceInfo.Device', { val: devNumber, ack: true });
-		//this.log.debug(jsonString.Header.Timestamp);
-		await this.setStateChangedAsync('DeviceInfo.Timestamp', { val: parseInt(jsonString.Header.Timestamp), ack: true });
+		const date = new Date(jsonString.Header.Timestamp * 1000);
+		//this.log.debug(Date.parse(parseInt(jsonString.Header.Timestamp)).toString());
+		await this.setStateChangedAsync('DeviceInfo.Timestamp', { val: date.toTimeString() , ack: true });
 		//this.log.debug(jsonString.Status);
 		await this.setStateChangedAsync('DeviceInfo.Status', { val: jsonString.Status, ack: true });		//await this.setStateChangedAsync('Inputs.1.Value', { val: jsonString.data.Data.Inputs.Number[1].Value.Value, ack: true });
-		//this.log.debug(jsonString.data.count);
 
 		if(jsonString.Status == 'OK')
 		{
 			this.config.Option1.split(',').forEach(optValue => {
 				this.WriteDataPoints(jsonString.Data.Inputs,opttionsJson[optValue]);
 			});
-			if(this.config.Option1.includes('I')){
-				//await this.WriteDataPoints(jsonString.Data.Inputs,'Inputs');
-			}
-			if(this.config.Option1.includes('O')){
-				//await this.WriteDataPoints(jsonString.Data.Outputs,'Outputs');
-			}
-			if(this.config.Option1.includes('D')){
-				//this.log.debug(jsonString.Data['DL-Bus'][2].Value.Value);
-				//this.log.debug(JSON.stringify(jsonString.Data['DL-Bus']));
-				//await this.WriteDataPoints(jsonString.Data['DL-Bus'],'DL-Bus');
-			}
 		}
 		else if(jsonString.Status == 'NODE ERROR'){
 			this.log.error('Can not find CMI. Maybe wrong parrameter?: ' + jsonString.Status);
