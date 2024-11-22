@@ -20,16 +20,12 @@
             "type": "text",
             "label": "Username on the CMI",
             "newLine": true,
-            "min": 1,
-            "max": 65535,
             "help": "User for the Webaccess"
         },
         "Password": {
             "type": "text",
             "label": "Password for the CMI User",
             "newLine": true,
-            "min": 1,
-            "max": 65535,
             "help": "Password for the CMI User"
         },
         "CAN-Bus ID": {
