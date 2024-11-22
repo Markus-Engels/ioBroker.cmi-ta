@@ -17,7 +17,7 @@
             "help": "Please enter the port of your CMI device"
         },
         "UserName": {
-            "type": "number",
+            "type": "text",
             "label": "Username on the CMI",
             "newLine": true,
             "min": 1,
@@ -25,7 +25,7 @@
             "help": "User for the Webaccess"
         },
         "Password": {
-            "type": "number",
+            "type": "text",
             "label": "Password for the CMI User",
             "newLine": true,
             "min": 1,
